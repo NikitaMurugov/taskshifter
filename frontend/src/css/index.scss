@@ -1,0 +1,88 @@
+
+* {
+    margin: 0; 
+    padding: 0; 
+    list-style: none;
+    outline: none;
+    font-family: "Roboto",-apple-system, system-ui, sans-serif;
+}
+
+body {
+    height: 100vh;
+    font-family: "Roboto",-apple-system, system-ui, sans-serif;
+}
+
+#root {
+    height: 100%;
+}
+
+.todo {
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    width: 750px;
+    height: 530px;
+    display: flex;
+    box-shadow: 0px 5px 10px #00000006;
+    border-radius: 20px;
+    border: 1px solid #f1f1f1;
+    overflow: hidden;
+    
+    * {
+        box-sizing: border-box;
+    }
+
+    &__sidebar {
+        padding: 30px;
+        border-right: 1px solid #f1f1f1;
+        width: 200px;
+        background: #f4f6f8;
+    }
+    &__list {
+        margin-top: 20px;
+
+        li {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            box-sizing: content-box;
+            padding: 5px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            transition: 200ms;
+            
+            &:hover {   
+                box-shadow: 0 2px 4px #00000006;
+                background: #f8f9fb;
+            }
+            &:active  {   
+                box-shadow: 0 2px 4px #00000006;
+                background: #ffffff;
+            }
+            
+            &:last-child {   
+                margin-bottom: 0;
+            }
+            &.active {  
+                background: white;
+                box-shadow: 0 2px 4px #00000006;
+            }
+
+            i {
+                display: block;
+                margin-right: 10px;
+                height: 18px;
+                opacity: 0.5;
+            }
+            i.color-ball {
+                display: block;
+                margin: 4px 14px 4px 4px;
+                height: 10px;
+                width: 10px;
+                border-radius: 5px;
+                background: gray;
+            }
+        }
+    }
+}
