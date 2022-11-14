@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+    Options +FollowSymlinks
+    RewriteEngine On   
+
+    RewriteCond %{REQUEST_URI} ^/api
+    RewriteRule ^api(.*)$ backend/public/$1 [L]
+    # RewriteRule ^api/storage/(.*)$ backend/public/storage/$1 [L]
+
+    RewriteCond %{REQUEST_FILENAME} !-f [OR]
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^.*$ frontend/public/index.html
+</IfModule>
